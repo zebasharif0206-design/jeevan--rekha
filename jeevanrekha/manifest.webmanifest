@@ -1,0 +1,20 @@
+{
+  "name": "Jeevanरेखा — Road Accident Aid",
+  "short_name": "Jeevanरेखा",
+  "description": "Offline, voice-guided first aid and triage for road accident bystanders in India.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#b91c1c",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+#!/usr/bin/env node
+/**
+ * Jeevanरेखा — translation generator.
+ *
+ * Reads English source from protocols-source.json, calls Google Cloud Translation
+ * for any protocol that does not already have an entry in translations.js, and
+ * appends generated entries before the mounter at the bottom of translations.js.
+ *
+ * Usage:
+ *   GOOGLE_TRANSLATE_API_KEY=AIza... node generate-translations.mjs
+ *   GOOGLE_TRANSLATE_API_KEY=...     node generate-translations.mjs --only=heatstroke,nosebleed
+ *   GOOGLE_TRANSLATE_API_KEY=...     node generate-translations.mjs --force   # regenerate all
+ *
+ * Setup:
+ *   1. Get a Google Cloud project at console.cloud.google.com (free tier covers
+ *      500,000 chars/month; this whole job is ~200,000 chars one-time).
+ *   2. APIs & Services → Library → enable "Cloud Translation API".
+ *   3. APIs & Services → Credentials → Create credentials → API key. Copy it.
+ *   4. (Optional) Restrict the key to the Cloud Translation API.
+ *   5. Export it and run the script:
+ *        export GOOGLE_TRANSLATE_API_KEY=AIza...your-key...
+ *        node generate-translations.mjs
+ *
+ * Requirements: Node 18+ (built-in fetch). No npm dependencies.
+ */
+
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const SOURCE_PATH = path.join(__dirname, "protocols-source.json");
+const OUTPUT_PATH = path.join(__dirname, "translations.js");
+const TARGETS = ["mr", "ta", "te", "bn"];
+
+const KEY = process.env.GOOGLE_TRANSLATE_API_KEY;
+if (!KEY) {
+  console.error("✖ Set GOOGLE_TRANSLATE_API_KEY in your environment first.");
+  console.error("  See the header comment of this file for setup steps.");
+  process.exit(1);
+}
+
+const argv = process.argv.slice(2);
+const force = argv.includes("--force");
+const onlyArg = argv.find(a => a.startsWith("--only="));
+const onlySet = onlyArg ? new Set(onlyArg.split("=")[1].split(",")) : null;
+
+const source = JSON.parse(fs.readFileSync(SOURCE_PATH, "utf8"));
+delete source._about;
+
+const existing = fs.readFileSync(OUTPUT_PATH, "utf8");
+const existingIds = new Set([...existing.matchAll(/T\["([^"]+)"\]/g)].map(m => m[1]));
+
+const todo = Object.entries(source).filter(([id]) => {
+  if (onlySet) return onlySet.has(id);
+  if (force) return true;
+  return !existingIds.has(id);
+});
+
+if (todo.length === 0) {
+  console.log("Nothing to do — all protocols already translated. Use --force to regenerate.");
+  process.exit(0);
+}
+
+console.log(`Translating ${todo.length} protocol${todo.length === 1 ? "" : "s"} × ${TARGETS.length} languages.`);
+
+async function translateBatch(strings, target) {
+  const url = `https://translation.googleapis.com/language/translate/v2?key=${KEY}`;
+  const body = JSON.stringify({ q: strings, source: "en", target, format: "text" });
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body,
+  });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Google API ${res.status}: ${text.slice(0, 400)}`);
+  }
+  const data = await res.json();
+  if (!data.data || !data.data.translations) {
+    throw new Error("Unexpected response: " + JSON.stringify(data).slice(0, 400));
+  }
+  return data.data.translations.map(t => t.translatedText);
+}
+
+const generated = {};
+let totalChars = 0;
+
+for (const [id, src] of todo) {
+  const strings = [src.title, ...src.steps, ...src.dontDo];
+  totalChars += strings.reduce((s, x) => s + x.length, 0) * TARGETS.length;
+  const out = { title: {}, steps: src.steps.map(() => ({})), dontDo: {} };
+
+  process.stdout.write(`  ${id} `);
+  for (const target of TARGETS) {
+    const translated = await translateBatch(strings, target);
+    out.title[target] = translated[0];
+    src.steps.forEach((_, i) => { out.steps[i][target] = translated[1 + i]; });
+    out.dontDo[target] = translated.slice(1 + src.steps.length);
+    process.stdout.write(`✓${target} `);
+  }
+  process.stdout.write("\n");
+
+  generated[id] = out;
+}
+
+console.log(`\nFetched ~${totalChars.toLocaleString()} characters total.`);
+
+// Serialise a value as compact-but-readable JS (not JSON — bare keys, single quotes)
+function jsLiteral(value, indent = 0) {
+  const pad = (n) => " ".repeat(n);
+  if (Array.isArray(value)) {
+    if (value.length === 0) return "[]";
+    const items = value.map(v => jsLiteral(v, indent + 2));
+    return "[\n" + items.map(x => pad(indent + 2) + x).join(",\n") + "\n" + pad(indent) + "]";
+  }
+  if (value && typeof value === "object") {
+    const entries = Object.entries(value);
+    if (entries.length === 0) return "{}";
+    const lines = entries.map(([k, v]) => pad(indent + 2) + k + ": " + jsLiteral(v, indent + 2));
+    return "{\n" + lines.join(",\n") + "\n" + pad(indent) + "}";
+  }
+  // strings
+  return JSON.stringify(value);
+}
+
+// Build the new T[id] = {...} blocks
+const blocks = [];
+for (const [id, tx] of Object.entries(generated)) {
+  blocks.push(
+    `/* ---------- ${id} (generated by Google Cloud Translation) ---------- */\n` +
+    `T[${JSON.stringify(id)}] = ${jsLiteral(tx)};\n`
+  );
+}
+
+// Insert before the mounter comment marker
+const marker = "/* ---------- mounter";
+const insertAt = existing.lastIndexOf(marker);
+if (insertAt === -1) {
+  console.error("✖ Could not find mounter marker in translations.js — refusing to write.");
+  process.exit(1);
+}
+
+// If forcing, strip out any existing block for an id we are regenerating
+let head = existing.slice(0, insertAt);
+if (force || onlySet) {
+  for (const id of Object.keys(generated)) {
+    const reBlock = new RegExp(`\\n?/\\* ---------- ${id.replace(/[-/\\^$*+?.()|[\\]{}]/g, "\\$&")}.*?\\*/\\nT\\[${JSON.stringify(id).replace(/[-/\\^$*+?.()|[\\]{}]/g, "\\$&")}\\] = \\{[\\s\\S]*?\\n\\};\\n?`, "g");
+    head = head.replace(reBlock, "\n");
+  }
+}
+
+const tail = existing.slice(insertAt);
+const updated = head + blocks.join("\n") + "\n" + tail;
+fs.writeFileSync(OUTPUT_PATH, updated, "utf8");
+
+console.log("\n✓ translations.js updated. Bump CACHE in sw.js so installed users see the new strings.");

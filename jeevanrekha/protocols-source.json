@@ -1,0 +1,551 @@
+{
+  "_about": "Canonical English source for all 35 protocols. generate-translations.mjs reads this and produces translations.js entries for Marathi / Tamil / Telugu / Bengali via Google Cloud Translation. Keep this file in sync if the protocol text in index.html changes.",
+  "unconscious-breathing": {
+    "title": "Unconscious but breathing",
+    "steps": [
+      "Tap the shoulder and shout. Check for a response.",
+      "Open the airway: gently tilt the head back and lift the chin.",
+      "Watch the chest rise for ten seconds to confirm breathing.",
+      "Roll the victim onto the left side — recovery position. Top knee bent forward.",
+      "Keep the airway open. Stay with the victim. Check breathing every minute."
+    ],
+    "dontDo": [
+      "Do NOT give water or food.",
+      "Do NOT leave the victim alone.",
+      "Do NOT move the neck if a spine injury is suspected."
+    ]
+  },
+  "cpr": {
+    "title": "CPR — not breathing",
+    "steps": [
+      "Lay the victim flat on the ground, face up, on a hard surface.",
+      "Place the heel of one palm on the centre of the chest. Put your other hand on top.",
+      "Push hard and fast — 5 to 6 cm deep, about 2 per second. Count to thirty.",
+      "If trained, give two rescue breaths. If not, keep pressing.",
+      "Repeat thirty pushes and two breaths until the ambulance arrives or the victim moves."
+    ],
+    "dontDo": [
+      "Do NOT stop to check the pulse repeatedly.",
+      "Do NOT lift your hands fully between pushes.",
+      "Do NOT give up before ten minutes or until the ambulance takes over."
+    ]
+  },
+  "severe-bleeding": {
+    "title": "Severe bleeding",
+    "steps": [
+      "Wear gloves if available, or use any cloth between your hand and the blood.",
+      "Press hard directly on the wound with the cleanest cloth you can find.",
+      "Keep pressing. Do not lift the cloth to check. Add more cloth on top if it soaks through.",
+      "Raise the bleeding limb above the heart, only if no fracture is suspected.",
+      "Tie a firm bandage around the cloth to keep the pressure on.",
+      "Watch for shock — pale skin, sweating, fast shallow breathing."
+    ],
+    "dontDo": [
+      "Do NOT remove an object embedded in the wound.",
+      "Do NOT use a tourniquet unless the limb is almost severed.",
+      "Do NOT give water if surgery may be needed."
+    ]
+  },
+  "spinal-injury": {
+    "title": "Suspected spinal injury",
+    "steps": [
+      "Do NOT move the victim. Tell them to stay still.",
+      "Kneel at the head. Hold the head still with both hands, ears between palms.",
+      "Tell the victim to breathe slowly. Reassure calmly.",
+      "Keep head, neck and back in one straight line until the ambulance arrives.",
+      "If you MUST move them for safety, log-roll with helpers — keep the spine straight."
+    ],
+    "dontDo": [
+      "Do NOT lift the head or bend the neck.",
+      "Do NOT sit them up or stand them up.",
+      "Do NOT remove a helmet unless you are trained."
+    ]
+  },
+  "multiple-casualties": {
+    "title": "Multiple casualties",
+    "steps": [
+      "Shout: anyone who can walk, come towards me. Walkers are GREEN.",
+      "For each remaining victim, check breathing. Not breathing after a head-tilt is BLACK.",
+      "Fast breathing (more than 30 per minute) or heavy bleeding is RED.",
+      "Calm breathing and conscious but cannot walk is YELLOW.",
+      "Treat RED first: stop bleeding, open airways. Tell bystanders to help GREEN victims.",
+      "Call 108. Report the count of RED, YELLOW, GREEN victims and the road landmark."
+    ],
+    "dontDo": [
+      "Do NOT try to save BLACK before RED.",
+      "Do NOT move spinal cases unless there is fire or traffic.",
+      "Do NOT work alone if helpers are available."
+    ]
+  },
+  "burns": {
+    "title": "Burns",
+    "steps": [
+      "Move the victim away from the heat source — only if it is safe for you.",
+      "Pour clean cool (not ice-cold) water on the burn for at least twenty minutes.",
+      "Remove rings, watches, tight clothing near the burn before swelling begins.",
+      "Cover the burn loosely with clean cling film, plastic wrap or a non-stick cloth.",
+      "Keep the rest of the body warm. Do not break blisters."
+    ],
+    "dontDo": [
+      "Do NOT apply ice, butter, toothpaste, oil or ointment.",
+      "Do NOT peel off cloth stuck to the burn.",
+      "Do NOT pop blisters."
+    ]
+  },
+  "fractures": {
+    "title": "Fractures",
+    "steps": [
+      "Do not try to straighten the broken limb.",
+      "Support the limb in the exact position you found it.",
+      "Pad around the injury with rolled cloth or a folded jacket.",
+      "Splint to a rigid object — stick, rolled magazine — tying above and below the break.",
+      "Check the fingers or toes stay warm and pink. Loosen if they turn pale or cold."
+    ],
+    "dontDo": [
+      "Do NOT push a protruding bone back in.",
+      "Do NOT give food or water — surgery may be needed.",
+      "Do NOT realign the limb."
+    ]
+  },
+  "shock": {
+    "title": "Shock",
+    "steps": [
+      "Lay the victim flat on the back.",
+      "Raise the legs about thirty cm on a bag or jacket — unless leg or spine is injured.",
+      "Loosen tight clothing at neck, chest and waist.",
+      "Cover with a jacket or blanket to keep the body warm.",
+      "Talk to them calmly. Check breathing every minute."
+    ],
+    "dontDo": [
+      "Do NOT give water, food, or alcohol.",
+      "Do NOT let them stand or walk.",
+      "Do NOT leave them alone."
+    ]
+  },
+  "child-victim": {
+    "title": "Child or infant victim",
+    "steps": [
+      "Call 108 immediately and say it is a child. Children worsen quickly.",
+      "Open the airway gently — over-tilting can block a small airway.",
+      "For CPR on a child, use the heel of one hand. Push about five cm deep.",
+      "For an infant under one year, use two fingers. Push about four cm deep.",
+      "Rescue breaths for an infant: cover the mouth AND nose with your mouth.",
+      "Continue thirty pushes and two breaths until help arrives."
+    ],
+    "dontDo": [
+      "Do NOT shake the child.",
+      "Do NOT use adult compression force.",
+      "Do NOT give water."
+    ]
+  },
+  "pregnant-victim": {
+    "title": "Pregnant victim",
+    "steps": [
+      "Tilt the victim onto her LEFT side, about thirty degrees, using a folded jacket under the right hip.",
+      "This relieves pressure on the big vein and helps blood return to the heart.",
+      "If she stops breathing, start CPR. Push on the breastbone as normal.",
+      "If she must stay on her back, manually push the belly to the left side.",
+      "Watch for bleeding from below or sudden belly hardness.",
+      "Tell 108 that this is a pregnant patient so they send the right team."
+    ],
+    "dontDo": [
+      "Do NOT lay her flat on her back for long.",
+      "Do NOT press on the belly.",
+      "Do NOT give water."
+    ]
+  },
+  "head-injury": {
+    "title": "Head injury / concussion",
+    "steps": [
+      "Keep the victim still and lying down. Treat as a spine injury until proven safe.",
+      "Hold the head in line with the body. Do not turn the neck.",
+      "Apply gentle pressure on any scalp bleeding with a clean cloth — do not press over a depressed skull.",
+      "Watch for warning signs: vomiting, one pupil bigger, slurred speech, confusion, fluid from ear or nose.",
+      "If they vomit, log-roll to the side with the spine straight to protect the airway.",
+      "Keep talking to them. Note time of injury and any change in consciousness."
+    ],
+    "dontDo": [
+      "Do NOT let them sleep without monitoring.",
+      "Do NOT give aspirin or pain killers — may worsen bleeding.",
+      "Do NOT remove a helmet unless trained."
+    ]
+  },
+  "crush-injury": {
+    "title": "Crush injury (trapped limb)",
+    "steps": [
+      "Call 108 immediately. Say a limb is trapped under a vehicle or heavy object.",
+      "Do NOT lift the weight off if it has been trapped more than 15 minutes — wait for medics.",
+      "Control any bleeding above the crushed area with firm pressure on a clean cloth.",
+      "Keep the victim warm with a jacket or blanket. Shock is very likely.",
+      "Talk to them. Do NOT give water — surgery is likely needed.",
+      "If trapped less than 15 minutes AND it is safe, lift the weight off, control bleeding, and watch breathing."
+    ],
+    "dontDo": [
+      "Do NOT release the weight without medics if trapped >15 min — toxins can stop the heart.",
+      "Do NOT give pain killers.",
+      "Do NOT leave the victim alone."
+    ]
+  },
+  "choking": {
+    "title": "Choking — airway blocked",
+    "steps": [
+      "Ask: 'Are you choking?'. If they can cough or speak, encourage them to keep coughing.",
+      "If they cannot cough or speak, stand behind. Lean them forward.",
+      "Give five firm back blows between the shoulder blades with the heel of your hand.",
+      "If still blocked: wrap arms around waist, fist above the navel, five inward and upward thrusts.",
+      "Repeat five back blows and five thrusts until the object comes out.",
+      "If they become unconscious, lay them down and start CPR immediately."
+    ],
+    "dontDo": [
+      "Do NOT slap the back if they are still coughing well.",
+      "Do NOT give water.",
+      "Do NOT use abdominal thrusts on a pregnant victim — use chest thrusts."
+    ]
+  },
+  "amputation": {
+    "title": "Severed finger or limb",
+    "steps": [
+      "Call 108 and stay with the victim. Lay them down and keep them calm.",
+      "Apply very firm direct pressure on the stump with the cleanest cloth you have.",
+      "Raise the injured limb above the heart if possible. Keep pressing.",
+      "Wrap the severed part in a clean cloth. Place in a clean plastic bag. Seal.",
+      "Place that bag in a second bag with ice and water — never let ice touch the tissue.",
+      "Send the cooled part with the patient to the hospital, labelled with the time."
+    ],
+    "dontDo": [
+      "Do NOT wash the severed part with soap or antiseptic.",
+      "Do NOT put the part directly on ice.",
+      "Do NOT use a tourniquet unless bleeding cannot be stopped any other way."
+    ]
+  },
+  "eye-injury": {
+    "title": "Eye injury / object in eye",
+    "steps": [
+      "Tell the victim to keep both eyes still — the eyes move together, so moving one moves the other.",
+      "If an object is stuck in the eye, do NOT remove it.",
+      "Build a ring of rolled cloth around the object to stop pressure on it. Tape it in place.",
+      "Cover both eyes with a soft pad — covering only one still lets the injured eye move.",
+      "For chemical splash without an embedded object, rinse with clean water for 15 minutes.",
+      "Keep the head still. Do not let the victim rub the eye."
+    ],
+    "dontDo": [
+      "Do NOT remove an embedded object.",
+      "Do NOT press on the eyeball.",
+      "Do NOT rinse if a sharp object is stuck."
+    ]
+  },
+  "seizure": {
+    "title": "Seizure / fit",
+    "steps": [
+      "Move sharp objects, traffic, and furniture away from the victim.",
+      "Cushion the head with a folded jacket or bag.",
+      "Loosen any tight clothing at the neck.",
+      "Time the seizure. Note when it started.",
+      "When the shaking stops, gently roll them onto their side — recovery position.",
+      "Call 108 if the seizure lasts over 5 minutes, repeats, or it is the first one ever."
+    ],
+    "dontDo": [
+      "Do NOT put anything in the mouth — they cannot swallow their tongue.",
+      "Do NOT hold them down.",
+      "Do NOT give water until fully awake."
+    ]
+  },
+  "heart-attack": {
+    "title": "Heart attack / chest pain",
+    "steps": [
+      "Sit the victim down with back and head supported, knees bent. Loosen tight clothing.",
+      "Call 108 immediately. Say 'suspected heart attack' so they send the right team.",
+      "Ask about allergies. If adult, no allergy, no bleeding — give one regular aspirin (300 mg) to chew slowly, if available.",
+      "Keep them still and reassure them calmly. Do not let them walk.",
+      "Watch breathing every minute. Be ready to start CPR if they stop responding."
+    ],
+    "dontDo": [
+      "Do NOT have them walk or drive.",
+      "Do NOT give aspirin if they are bleeding or allergic.",
+      "Do NOT give nitroglycerin unless their own doctor has prescribed it."
+    ]
+  },
+  "stroke": {
+    "title": "Stroke — F.A.S.T.",
+    "steps": [
+      "F — Face: ask them to smile. Does one side droop?",
+      "A — Arms: ask them to raise both arms. Does one drift down?",
+      "S — Speech: ask them to repeat a simple sentence. Is it slurred or wrong?",
+      "T — Time: note the exact time symptoms began. This decides treatment.",
+      "Call 108. Say 'suspected stroke' and the time symptoms started.",
+      "Lay them down with the head and shoulders slightly raised. Keep them still and warm."
+    ],
+    "dontDo": [
+      "Do NOT give food or water — they may not be able to swallow.",
+      "Do NOT give aspirin — strokes can be bleeding type.",
+      "Do NOT delay the call."
+    ]
+  },
+  "smoke-inhalation": {
+    "title": "Smoke inhalation / vehicle fire",
+    "steps": [
+      "Get the victim into fresh air at once — only if you can do it without entering the smoke yourself.",
+      "Loosen clothing at the neck and chest. Sit them up, slightly leaning forward.",
+      "Look around the mouth and nose for soot or singed hair — that warns of burned airway.",
+      "Listen for hoarse voice, noisy breathing, or coughing black phlegm — all are emergencies.",
+      "Call 108 and say 'smoke inhalation'. The airway can swell shut over the next hour.",
+      "Monitor breathing every minute. Be ready to start CPR if they stop responding."
+    ],
+    "dontDo": [
+      "Do NOT re-enter the smoke yourself.",
+      "Do NOT let them lie flat if they are coughing or struggling to breathe.",
+      "Do NOT give water if they are confused or drowsy."
+    ]
+  },
+  "electric-shock": {
+    "title": "Electric shock / downed wire",
+    "steps": [
+      "Do NOT touch the victim while they are still in contact with the source.",
+      "Switch off the power at the main switch or pull the plug.",
+      "If you cannot turn it off, use DRY wood, plastic, or rubber to push the source away.",
+      "Check breathing. If not breathing, start CPR immediately.",
+      "Look for entry and exit burns — usually hand and foot. Cover with clean cloth.",
+      "Treat for shock: keep warm, lay flat, monitor. Call 108 — internal injury is common."
+    ],
+    "dontDo": [
+      "Do NOT touch a live victim with bare hands.",
+      "Do NOT use wet or metal objects to push wires.",
+      "Do NOT skip the hospital even if they feel fine — heart rhythm can change later."
+    ]
+  },
+  "diabetic-emergency": {
+    "title": "Diabetic emergency (low sugar)",
+    "steps": [
+      "Ask if they are diabetic. Look for sweating, shaking, confusion, slurred speech, hunger.",
+      "If conscious, give 15 grams of fast sugar — fruit juice, regular soft drink, sugar in water, or glucose biscuit.",
+      "Help them sit down. Stay with them. Keep talking calmly.",
+      "Recheck after 10 minutes. If still confused, give another 15 grams of sugar.",
+      "If they pass out, do NOT give anything by mouth. Place in recovery position. Call 108."
+    ],
+    "dontDo": [
+      "Do NOT force food or drink if unconscious.",
+      "Do NOT give diet or sugar-free drinks.",
+      "Do NOT leave them alone."
+    ]
+  },
+  "asthma-attack": {
+    "title": "Asthma attack",
+    "steps": [
+      "Help them sit up straight, leaning slightly forward. Loosen tight clothing.",
+      "Ask for their inhaler. Help them shake it and breathe in two puffs.",
+      "Wait one minute. If no improvement, give two more puffs. Repeat up to 10 puffs.",
+      "Talk calmly. Tell them slow breaths in through the nose, out through pursed lips.",
+      "Call 108 if no inhaler is available, if attack worsens, lips turn blue, or no relief after 10 puffs."
+    ],
+    "dontDo": [
+      "Do NOT make them lie flat.",
+      "Do NOT give water during a severe attack.",
+      "Do NOT panic — your calm helps their breathing."
+    ]
+  },
+  "anaphylaxis": {
+    "title": "Severe allergic reaction (anaphylaxis)",
+    "steps": [
+      "Look for swollen lips/tongue/face, hives, wheezing, throat tightness, dizziness.",
+      "Call 108 right away. Say 'severe allergic reaction'.",
+      "If they have an EpiPen, help them inject it into the OUTER thigh — even through clothes.",
+      "Lay them flat. Raise the legs about 30 cm. If breathing is hard, let them sit instead.",
+      "Remove the trigger if visible — bee sting (scrape, do not pinch), food still in mouth.",
+      "If a second EpiPen is available and symptoms return in 5–15 min, use it."
+    ],
+    "dontDo": [
+      "Do NOT have them stand or walk.",
+      "Do NOT delay the EpiPen — adrenaline saves lives.",
+      "Do NOT give food or water."
+    ]
+  },
+  "fainting": {
+    "title": "Fainting / collapse",
+    "steps": [
+      "Lay the victim flat on their back on a safe surface.",
+      "Raise the legs about 30 cm using a bag or jacket.",
+      "Loosen tight clothing at the neck, chest, and waist. Make sure fresh air can reach them.",
+      "Check breathing. If awake, keep them lying down for several minutes.",
+      "When they sit up, do it slowly. If they faint again, call 108."
+    ],
+    "dontDo": [
+      "Do NOT stand them up quickly.",
+      "Do NOT splash water on their face.",
+      "Do NOT give water until they are fully awake."
+    ]
+  },
+  "heatstroke": {
+    "title": "Heatstroke",
+    "steps": [
+      "Move the victim to shade or a cool indoor place immediately.",
+      "Remove extra clothing. Loosen belts.",
+      "Cool aggressively: pour cool water on body, fan them, wet cloths to neck, armpits, and groin.",
+      "If awake and clear, sip cool water — slow, small sips.",
+      "Call 108. Heatstroke can damage the brain and kidneys quickly.",
+      "Keep cooling until temperature feels normal or help arrives."
+    ],
+    "dontDo": [
+      "Do NOT give paracetamol or aspirin — they do not help heatstroke.",
+      "Do NOT give alcohol or sugary drinks.",
+      "Do NOT use ice baths on elderly or weak victims."
+    ]
+  },
+  "hypothermia": {
+    "title": "Hypothermia (severe cold)",
+    "steps": [
+      "Move the victim to a warm sheltered area. Handle very gently — a cold heart can stop with rough handling.",
+      "Carefully remove wet clothes. Pat skin dry without rubbing.",
+      "Wrap them in dry blankets including the head. Use body heat — skin to skin — if needed.",
+      "If fully awake and able to swallow, give warm (not hot) sweet drinks.",
+      "Call 108. Keep monitoring breathing."
+    ],
+    "dontDo": [
+      "Do NOT rub the skin or limbs.",
+      "Do NOT give alcohol or coffee.",
+      "Do NOT use direct heat (fire, hot water bath, heating pad)."
+    ]
+  },
+  "nosebleed": {
+    "title": "Nosebleed",
+    "steps": [
+      "Sit the victim up. Lean head SLIGHTLY FORWARD — do not tilt back.",
+      "Pinch the SOFT part of the nose (just below the bone) firmly with thumb and finger.",
+      "Hold the pinch for a full 10 minutes without releasing to check. Breathe through the mouth.",
+      "Spit out any blood in the mouth. Place a cold cloth on the bridge of the nose.",
+      "If still bleeding after 10 minutes, pinch again for another 10. If still bleeding, go to hospital."
+    ],
+    "dontDo": [
+      "Do NOT tilt the head back — it sends blood into the throat.",
+      "Do NOT pack cotton wool deep into the nose.",
+      "Do NOT blow the nose for several hours after."
+    ]
+  },
+  "drowning-rescue": {
+    "title": "Drowning rescue",
+    "steps": [
+      "Do NOT enter the water unless you are a trained swimmer with a flotation device.",
+      "Throw a rope, branch, bottle, or anything that floats. Pull them out by the rope.",
+      "Once on land, lay them flat on their back. Open the airway gently.",
+      "Check breathing for 10 seconds. If not breathing, give 5 rescue breaths first — drowning needs breaths before compressions.",
+      "Then begin 30 compressions and 2 breaths. Continue until ambulance arrives or they breathe on their own.",
+      "Even if they wake up, take them to hospital — secondary drowning can happen hours later."
+    ],
+    "dontDo": [
+      "Do NOT enter the water without flotation.",
+      "Do NOT push on the belly to drain water — it causes vomiting.",
+      "Do NOT skip the hospital even if they seem fine."
+    ]
+  },
+  "snake-bite": {
+    "title": "Snake bite",
+    "steps": [
+      "Move the victim AWAY from the snake. Keep them calm and still. Movement spreads venom.",
+      "Remove rings, watches, and tight clothes from the bitten limb before it swells.",
+      "Keep the bitten part BELOW the level of the heart. Support it. Do not lift.",
+      "With a pen, draw a circle around the swelling. Write the time. Note any new swelling line every 15 min.",
+      "Call 108 immediately. Say 'snake bite' so they bring antivenom.",
+      "If you can do it SAFELY from a distance, photograph the snake. Do not chase it."
+    ],
+    "dontDo": [
+      "Do NOT cut the wound or try to suck out venom.",
+      "Do NOT apply a tourniquet or tight band.",
+      "Do NOT give alcohol, pain killers, or food. Do NOT apply ice."
+    ]
+  },
+  "dog-bite": {
+    "title": "Dog bite (rabies risk)",
+    "steps": [
+      "Get away from the dog. Note the dog's appearance and behaviour.",
+      "Wash the bite with soap and running clean water for at least 15 minutes — this washes out the virus.",
+      "Apply an antiseptic (povidone iodine / Dettol) if available. Pat dry.",
+      "Cover loosely with a clean cloth — do not seal tightly. Control bleeding if any with light pressure.",
+      "GO to a hospital today for anti-rabies vaccine and tetanus shot. Rabies is 100% fatal once symptoms start.",
+      "If the dog was wild or behaving oddly, mention this so the doctor gives immune globulin too."
+    ],
+    "dontDo": [
+      "Do NOT apply turmeric, oil, chilli, or home remedies — they trap the virus in.",
+      "Do NOT stitch the wound at home.",
+      "Do NOT skip the rabies vaccine — it works within hours."
+    ]
+  },
+  "scorpion-sting": {
+    "title": "Scorpion or bee sting",
+    "steps": [
+      "Keep the victim calm. Move them away from the swarm.",
+      "For a bee sting, SCRAPE the stinger out with a card edge. Do not pinch it with fingers — that pumps more venom in.",
+      "Wash the area with soap and water. Apply a cool cloth wrapped over ice to reduce pain and swelling.",
+      "Remove rings or tight bands near the sting before swelling.",
+      "Watch for severe allergy: face swelling, breathing trouble, dizziness. Treat as anaphylaxis.",
+      "For Indian red scorpion or for a stung child, go to hospital — antivenom can be life saving."
+    ],
+    "dontDo": [
+      "Do NOT cut the sting or try to suck out venom.",
+      "Do NOT apply ice directly to the skin.",
+      "Do NOT ignore symptoms in a child."
+    ]
+  },
+  "poisoning-ingestion": {
+    "title": "Poisoning (swallowed)",
+    "steps": [
+      "Find and KEEP the container, packet, or plant. Bring it to hospital with the patient.",
+      "Call 108 immediately. Say what was swallowed and how much, if known.",
+      "If they are awake, rinse the mouth with water. Have them spit it out.",
+      "Lay an unconscious victim on their side — recovery position — to protect the airway.",
+      "If they stop breathing, start CPR. Use a face shield if available.",
+      "Note the time of swallowing. Note any vomiting or change in behaviour for the doctor."
+    ],
+    "dontDo": [
+      "Do NOT make them vomit unless poison control tells you to.",
+      "Do NOT give milk, water, or 'antidotes' without medical advice.",
+      "Do NOT wait to see what happens."
+    ]
+  },
+  "chemical-burn": {
+    "title": "Chemical burn",
+    "steps": [
+      "Wear gloves if available, or use cloth between your hand and the chemical.",
+      "If the chemical is a dry powder, brush it off the skin first before adding water.",
+      "Flush the affected area with running cool water for at least 20 minutes — keep water flowing.",
+      "While flushing, remove contaminated clothes and jewellery near the burn.",
+      "Cover loosely with a clean non-stick cloth or cling film. Identify the chemical for the hospital.",
+      "Treat for shock: lay flat, keep warm, raise legs unless burned. Call 108."
+    ],
+    "dontDo": [
+      "Do NOT rub the area — it spreads the chemical.",
+      "Do NOT apply a neutraliser (acid + base produces heat).",
+      "Do NOT pull off cloth stuck to the burn."
+    ]
+  },
+  "acid-attack": {
+    "title": "Acid attack on face / eyes",
+    "steps": [
+      "Call 108 right away. Say 'acid attack — face and eyes'.",
+      "Flush the face and eyes with running cool clean water for at least 30 minutes — never stop the flow early.",
+      "Tell them to keep blinking under the water. Hold the eyelid open if they cannot.",
+      "Carefully remove contaminated clothes — cut them off rather than pulling over the head.",
+      "Cover the burned skin with a clean WET cloth — keep it cool and moist.",
+      "Note what was thrown — photo of the container if available — for the hospital and police."
+    ],
+    "dontDo": [
+      "Do NOT rub the eyes or skin.",
+      "Do NOT apply oil, ghee, turmeric, or any home remedy.",
+      "Do NOT use any 'neutraliser' — only large amounts of clean water."
+    ]
+  },
+  "emergency-childbirth": {
+    "title": "Emergency childbirth",
+    "steps": [
+      "Call 108 immediately. Say 'labour, baby coming'. Note time of regular contractions.",
+      "Lay the mother on her back with knees bent and legs apart. Support her head and shoulders.",
+      "Wash your hands. Place a clean cloth or sari under her hips.",
+      "When the baby's head appears, support it with one hand. DO NOT pull. Let the baby rotate naturally.",
+      "Once the baby is fully out, gently wipe the mouth and nose. Lay the baby on the mother's chest, skin to skin.",
+      "Cover both with a clean dry cloth. Keep them warm. Do NOT cut the cord without sterile tools — wait for help."
+    ],
+    "dontDo": [
+      "Do NOT pull on the baby or the cord.",
+      "Do NOT slap or shake the baby.",
+      "Do NOT panic — most births complete safely without help."
+    ]
+  }
+}
